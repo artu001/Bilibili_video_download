@@ -30,3 +30,9 @@ pip3 install -r requirements.txt
  哈哈哈，感谢大家！笔芯哟~**:cupid::cupid:
 
 
+需要下载 exe的时候，Python环境里面运行这个====NN 20190405
+
+import imageio
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
+imageio.plugins.ffmpeg.download()
