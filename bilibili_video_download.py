@@ -172,6 +172,8 @@ if __name__ == '__main__':
     # <accept_description><![CDATA[高清 1080P,高清 720P,清晰 480P,流畅 360P]]></accept_description>
     # <accept_quality><![CDATA[80,64,32,15]]></accept_quality>
     quality = input('请输入您要下载视频的清晰度(1080p:80;720p:64;480p:32;360p:15)(填写80或64或32或15):')
+    page_begin= input('请输入您要下载视频的开始p:')
+    page_end= input('请输入您要下载视频的结束p:')
 
     # 获取视频的cid,title
     headers = {
@@ -188,6 +190,10 @@ if __name__ == '__main__':
         print('[下载视频的cid]:' + cid)
         print('[下载视频的标题]:' + title)
         page = str(item['page'])
+        if int(page) < int(page_begin):
+            continue
+        if int(page) > int(page_end):
+            break        
         start_url = start_url + "/?p=" + page
         video_list = get_play_list(start_url, cid, quality)
         start_time = time.time()
