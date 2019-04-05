@@ -36,3 +36,6 @@ import imageio
 import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
 imageio.plugins.ffmpeg.download()
+
+================
+支持了输入开始下载页面，下载结束页面的功能 20190405
